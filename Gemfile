@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#form
+gem 'simple_form'
 #carrierwave
 gem 'carrierwave'
 #devise
