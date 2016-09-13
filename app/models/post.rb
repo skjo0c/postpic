@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
   
   mount_uploader :photo, PhotoUploader
 
-  validates :photo, :description :user_id, presence: true
+  validates :photo, :description, :user_id, presence: true
 end
