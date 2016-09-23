@@ -23,11 +23,11 @@
             <span class="caret"></span>
           </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-              <li><span class="nav_links pull-right"><%= link_to 'New Post', new_post_path %></span></li>
-              <li><span class="nav_links pull-right"><%= link_to 'Edit Settings', edit_user_registration_path %></span></li>
-              <li><span class="nav_links pull-right"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></span></li>
-              <li><span class="nav_links pull-right"><%= image_tag current_user.photo, class: 'prof_pic_small' %><%= current_user.name %></span></li>
+              <br>
+              <li><span class="nav_links pull-left"><%= link_to 'New Post', new_post_path %></span></li><br><br>
+              <li><span class="nav_links pull-left"><%= link_to 'Edit Settings', edit_user_registration_path %></span></li><br><br>
+              <li><span class="nav_links pull-left"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></span></li><br><br>
+              <li><span class="nav_links pull-left"><%= image_tag current_user.photo, class: 'prof_pic_small' %><%= current_user.name %></span></li><br><br>
             <% else %>
               <span class="nav_links pull-right"><%= link_to 'Sign Up', new_user_registration_path %></span>
               <span class="nav_links pull-right"><%= link_to 'Log In', new_user_session_path %></span>

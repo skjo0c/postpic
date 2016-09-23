@@ -118,13 +118,19 @@ nav {
   background-color: grey;
 };
 
-.name{
-  font_size: 20px;
-}
 
 .post_like {
   .fa {
     font-size: 20px;
     font-color: red;
   }
+}
+
+.dropdown{
+  top: 15px;
+}
+
+.dropdown-menu{
+  left: -50px;
+  text-align: left;
 }
