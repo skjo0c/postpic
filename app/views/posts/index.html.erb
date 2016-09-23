@@ -30,7 +30,7 @@
     <% if user_signed_in? %>
 
     <% else %>
-      <i class="fa fa-heart-o" aria-hidden="true"></i>
+      <i class="fa fa-heart-o" aria-hidden="true"></i><%= pluralize post.get_likes.size, "like" %>
     <% end %>
 
     <div class="post_comments">
