@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#heart
+gem 'font-awesome-sass', '~> 4.6.2'
+#abling_vote
+gem 'acts_as_votable', '~> 0.10.0'
 #form
 gem 'simple_form'
 #carrierwave

@@ -6,5 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :photo, PhotoUploader
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  acts_as_voter
 end

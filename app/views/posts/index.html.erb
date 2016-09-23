@@ -1,18 +1,62 @@
 <!Doctype html>
-<head>
+<head> 
 </head>
 <body>
-	<h1> PostPic </h1>
-	<% @posts.each do |post| %>
-  		<%= image_tag post.user.photo %>
-  		<%= post.user.name %>
-  		<%= image_tag post.photo %>
-  		<%= post.description %>
-  		<%= link_to 'View Post', post_path(post.id) %>
-  		<% if post.user == current_user %>
-  			<%= link_to 'Edit Post', edit_post_path(post.id) %>
-  			<%= link_to 'Delete Post', post_path(post.id), method: :delete %>
-  		<% end %>
-	<% end %>
+<% @posts.each do |post| %>
+  
+  <div class="post_box">
+    
+    <div class="post_header">
+      <%= image_tag post.user.photo, class: 'prof_pic_small' %>
+      <%= link_to post.user.name, user_path(post.user_id), {:style=>'color:#082d4c;', :class => "css_class"} %>
+      <span class="timestamp pull-right"><%= distance_of_time_in_words(DateTime.now, post.created_at) %> ago</span>
+    </div>
+
+    <div class="post_body">
+
+      <!--<%= link_to post.user.name, user_path(post.user_id) %>--> <%= post.description %>
+
+    </div> 
+
+    <hr>
+
+    <%= image_tag post.photo, class: 'photo' %>
+    <br>
+
+
+    <hr>
+    <br>
+
+    <% if user_signed_in? %>
+
+    <% else %>
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <% end %>
+
+    <div class="post_comments">
+
+      <% post.comments.each do |comment| %>
+
+        <%= link_to comment.user.name, user_path(comment.user_id) %> <%= comment.text %>
+        <%= link_to 'Delete', post_comment_path(post_id: post.id, id: comment.id), method: :delete %>
+        <span class="timestamp pull-right"><%= distance_of_time_in_words(DateTime.now, comment.created_at) %> ago</span>
+      <br>
+      <br>
+      <% end %>
+
+      <hr>
+
+      <!--comment section-->
+      <% if user_signed_in? %>
+        <%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do |f| %>
+          <%= f.input :text, label: 'Comment', placeholder: 'Add a comment...' %>
+          <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+          <% end %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
 </body> 
 </html>

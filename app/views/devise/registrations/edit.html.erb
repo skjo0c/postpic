@@ -25,10 +25,13 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" , required: true %>
   </div>
-
+  <div class = "field">
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
   <div class="field">
     <%= f.label 'Profile Picture' %><br />
-    <%= f.email_field :photo, required: true %>
+    <%= f.file_field :photo, required: true %>
   </div>
 
   <div class="actions">
