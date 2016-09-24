@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AwesomeControllerTest < ActionController::TestCase
+class AwesomesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
