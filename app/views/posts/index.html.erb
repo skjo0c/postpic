@@ -22,6 +22,19 @@
 
     <%= image_tag post.photo, class: 'photo' %>
     <br>
+    <br>
+
+    <!--editing post dropdown menu-->
+    <% if post.user == current_user %>
+      <div class="postdropdown">
+        <button>Edit Post</button>
+        <div class="postdropdown-content">
+          <li class = "postedits"><%= link_to 'Edit Post', edit_post_path(post.id) %></li><br>
+          <li class = "postedits"><%= link_to 'Delete Post', post_path(post.id), method: :delete %></li>
+        </div>
+      </div>
+
+      <% end %>
 
 
     <hr>
