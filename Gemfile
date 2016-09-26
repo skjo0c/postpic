@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-#cloudinary
-gem 'cloudinary'
 #heart
 gem 'font-awesome-sass', '~> 4.6.2'
 #abling_vote

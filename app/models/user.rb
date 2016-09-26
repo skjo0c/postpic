@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  validates_uniqueness_of :name
+
   acts_as_voter
 end
