@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+#cloudinary
+gem 'cloudinary'
 #form
 gem 'simple_form'
 #carrierwave
